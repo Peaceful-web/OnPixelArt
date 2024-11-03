@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: #212121;
+
+}
+
+header {
+    background-color: #292929;
+    padding: 0 15px; /*preenchimento de valor 0 em cima e baixo, 15 pixels na esquerda e direita*/
+    height: 55px;
+    display: flex;
+    align-items: center; /*alinha os itens do flex container no centro dentro da header*/
+    box-shadow: 0 2px rgba(0, 0, 0, 0.3) ;/*sombra na borda, 0 na esquerda, 2 pixels em baixo do elemento, 0.3 é a opacidade do rgba*/
+    position: relative; /*a header vai ficar por cima do aside, fazendo o efeito do box-shadow sobrepor a borda de cima do aside*/
+
+}
+
+/*Estilizando o h1 dentro da header*/
+header > h1 {
+    font-size: 1.3rem; /*tamanho da fonte 1.3% do valor padrão do navegador*/
+    font-weight: 700; /*grossura da fonte*/
+    color: #ebebeb; /*cor da fonte*/
+}
+
+main {
+    display: flex; /*vai alinhar os elementos um ao lado do outro, no caso o aside e o canvas*/
+    gap: 20px; /*margem de 20 pixels entre o aside e o canvas*/
+    align-items: flex-start; /*vai alinhar o canvas e o aside no início da tag main*/
+}
+
+aside {
+    width: 100%;
+    max-width: 270px; /*o máximo que a largura o aside pode ocupar é 270 pixels*/
+    background-color: #2c2c2c;
+    padding: 30px 20px 20px; /*preenchimento 30 pixels em cima, 20 pixels nos lados e 20 pixels em baixo*/
+    min-height: calc(100dvh - 55px); /*altura mínima do menu lateral aside vai ocupar 100% da tela menos a altura da header de 55 pixels por meio da função calc()*/
+}
+
+.canvas { /*estilizando a tag canvas onde fica o desenh*/
+    width: 100%;
+    max-width: 720px;
+    /*aspect-ratio: 1/1; vai deixar o canvas com aspecto quadrado, os próprios pixels e linhas vão deixá-lo quadrado*/
+    /*background-color: #555;*/
+    margin-top: 20px; /*20 pixels de margem com o elemento de cima no caso o header*/
+    display: flex; /*vai alinhar os itens filhos um ao lado do outro*/
+    flex-direction: column; /*vai alinhar os elementos em coluna um abaixo do outro*/
+    gap: 2px; /*vai colocar uma margem de 2 pixels entre cada elemento um abaixo do outro*/
+}
+
+.row {
+    display: flex; /*vai tornar todos os elementos filhos do row alinhados um ao lado do outro*/
+    gap: 2px; /*margem de 2 pixels entre cada elemento(div class="pixel" dentro do row*/
+
+}
+
+.pixel { /*estilizando a div pixels dentro do canvas*/
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #444;
+    user-select: none; /*bloqueia o comportamento de grifar textos em azul ao segurar o mouse pressionado o botão*/
+}
+
+.option-title {
+    color: #ebebeb;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block; /*todos os spans da class option-title vão se comportar como blocos um em cima do outro*/
+}
+
+.input-size{ /*botão input que define o tamanho da imagem*/
+    width: 100%; /*vai ocupar 100% da largura do aside*/
+    border: none; /*remove a borda*/
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.85rem; /*tamanho da fonte é 0.85% do font-size padrão do navegador*/
+    font-weight: 700;
+    color: #212121; /*cor da fonte*/
+    outline: none; /*remove a borda externa quando o input está selecionado por meio do click do mouse*/
+    margin: 10px 0 20px; /*margem de 10 pixel acima, 0 nas laterais e 20 pixels em baixo*/
+}
+
+.input-color{
+    appearance: none; /*vai zerar todas as propriedades que esse input carrega por padrão*/
+    width: 42px;
+    height: 45px;
+    background: 0; /*remove o fundo do input*/
+    border: none;
+    cursor: pointer;
+    margin: 5px 0 15px; /*margem de 5 pixels em cima, 0 nos lados e 15 pixels m baixo*/
+}
+
+.input-color::-moz-color-swatch{ /*quando o input-color está selecionado*/
+    border-radius: 50px;
+    border: 2px solid #ebebeb; /*borda de 2px*/
+}
+
+.input-color::-webkit-color-swatch{
+    border-radius: 50px;
+    border: 2px solid #ebebeb; /*borda de 2px*/
+}
+
+.used-colors{ /*setion que engloba os botões de cores usadas*/
+    margin-top: 10px; /*margem com o elemento de cima de 10 pixels*/
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap; /*vai fazer a quebra de linhas entre os elementos flex*/
+}
+
+.button-color{ /*botão de cores usadas*/
+    width: 40px; /*largura de 40 pixels*/
+    height: 40px;
+    border: none; /*remove a borda*/
+    border-radius: 4px;
+    cursor: pointer; /*cursor de mãozinha ao arrastar o mouse em cima do botão*/
+}
+
+.button-save{
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ebebeb;
+    cursor: pointer; 
+}
+
+.button-save:hover { /*quando arrastar o cursor em cima do botao save*/
+    background-color: #d5d4d4;
+}
+
+.reslize{
+    height: 720px; /*mesma altura do canvas*/
+    width: 2px; /*2 pixels a mais de largura que o canvas*/
+    background-color: #444;
+    margin-top: 20px; /*margem de 20 pixels em cima*/
+    cursor: col-resize; /*cursor que permite modificar o tamanho da coluna deslizando para os lados*/
+}

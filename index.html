@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!--Link com o arquivo css-->
+
+    <title>Pixel Art</title>
+</head>
+<body>
+
+    <header>
+        <h1>PixelArt</h1>
+    </header>
+
+    <main>
+        <aside><!--O elemento aside define um bloco de conteúdo que faz referência ao conteúdo principal que o cerca, pode estar ou não em uma barra lateral-->
+
+            <span class="option-title">Tamanho:</span>
+            <input type="number" class="input-size" min="4" value="10"><!--Input do tip number, valor mínimo=4, valor padrão = 10-->
+
+            <span class="option-title">Cor:</span> <!--Cada span contém o título de cada ferramenra-->
+            <input type="color" class="input-color"> <!--Input para o usuário selecionar cores-->
+
+            <span class="option-title">Cores usadas:</span>
+            <section class="used-colors">
+                <!--<button class="button-color" data-color="red"></button> botão contendo um data-color(cor padrão )-->
+            </section> <!--section contendo as cores utilizadas pelo usuário-->
+            
+            <button class="button-save">Baixar imagem</button> <!--botão para salvar a imagem-->
+        </aside>
+
+        <!--FORA DO MENU LATERAL(<aside>)-->
+
+        <section class="canvas"></section><!--Aqui ficará o desenho em si-->
+        <div class="reslize"></div><!--essa div vai ser uma barra vertical para arrastar e modificar o tamanho do canvas-->
+    </main>
+
+    <!--Biblioteca que salva o canvas abaixo-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script> <!--Linl com o arquvio javascript-->
+</body>
+</html>
